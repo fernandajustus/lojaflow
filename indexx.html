@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLOW - Ballet e Dança</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fff;
+}
+
+/* CABEÇALHO */
+
+header{
+    background:#f8eef0;
+    text-align:center;
+    padding:20px;
+}
+.logo{
+    width:500px;
+    max-width:95%;
+    margin-bottom:20px;
+}
+
+.pesquisa{
+    width:320px;
+    max-width:80%;
+    padding:10px;
+    border:1px solid #d9a5af;
+    border-radius:20px;
+    outline:none;
+}
+
+/* MENU */
+
+nav{
+    background:#e6b5bf;
+    padding:15px;
+}
+
+.menu-categorias{
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    padding:10px;
+    scroll-behavior:smooth;
+}
+
+.menu-categorias::-webkit-scrollbar{
+    height:10px;
+}
+
+.menu-categorias::-webkit-scrollbar-thumb{
+    background:#c97f90;
+    border-radius:20px;
+}
+
+.menu-categorias::-webkit-scrollbar-track{
+    background:#f8d7df;
+}
+
+.item-categoria{
+    min-width:120px;
+    text-align:center;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.item-categoria:hover{
+    transform:translateY(-8px);
+}
+
+.item-categoria img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid transparent;
+    transition:.4s;
+}
+
+.item-categoria:hover img{
+    border-color:#ffb6c1;
+    box-shadow:0 0 15px rgba(255,182,193,.8);
+}
+
+.item-categoria p{
+    margin-top:8px;
+    font-size:13px;
+    font-weight:bold;
+    color:#444;
+    transition:.4s;
+}
+
+.item-categoria:hover p{
+    color:#b86f7d;
+}
+
+/* BANNER */
+
+.banner{
+    position:relative;
+}
+
+.banner img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    filter:brightness(50%);
+}
+
+.texto-banner{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+}
+
+.texto-banner h2{
+    font-size:35px;
+}
+
+.texto-banner h1{
+    font-size:80px;
+    color:#ffb6c1;
+}
+
+.texto-banner p{
+    font-size:22px;
+    margin:15px 0;
+}
+
+.texto-banner button{
+    background:#ffb6c1;
+    border:none;
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* TÍTULOS */
+
+.titulo{
+    text-align:center;
+    margin-top:50px;
+    font-size:40px;
+    color:#b86f7d;
+}
+
+/* PRODUTOS */
+
+.produtos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding:40px;
+}
+
+.card{
+    width:220px;
+    text-align:center;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:220px;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:.4s;
+}
+
+.card:hover img{
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.card h3{
+    margin-top:10px;
+}
+
+.card p{
+    font-weight:bold;
+    margin-top:5px;
+}
+
+/* BENEFÍCIOS */
+
+.beneficios{
+    background:#f8f8f8;
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.beneficios div{
+    max-width:220px;
+    margin:15px;
+}
+
+/* SOBRE */
+
+.sobre{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.sobre p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* DEPOIMENTOS */
+
+.depoimentos{
+    background:#fff4f7;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.comentario{
+    background:white;
+    max-width:500px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+/* RODAPÉ */
+
+footer{
+    background:#111;
+    color:white;
+    padding:50px 20px 20px;
+}
+
+.rodape{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.rodape div{
+    flex:1;
+    min-width:250px;
+}
+
+.rodape h3{
+    color:#ffb6c1;
+    margin-bottom:15px;
+}
+
+.rodape p{
+    margin-bottom:8px;
+}
+
+footer input{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+footer button{
+    margin-top:10px;
+    background:#ffb6c1;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+footer button:hover{
+    background:#f89eb0;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="https://i.ibb.co/vncsHRN/img-flow.png" alt="Logo FLOW" width="250">
+
+<br>
+
+<input
+type="text"
+placeholder="Pesquisar produtos..."
+class="pesquisa">
+
+</header>
+
+<nav>
+
+<div class="menu-categorias">
+
+<div class="item-categoria">
+<img src="https://decathlonpro.vtexassets.com/arquivos/ids/159077130/velvet-dance-bag-pnk-no-size-rosa-velho-Unico1.jpg?v=638591747868300000">
+<p>Bolsas</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://images.tcdn.com.br/img/img_prod/633103/jaqueta_feminina_puffer_inverno_bolha_nylon_3_cores_5395_1_60208a4bff4ca4430f3df9a27f0c470b.jpg">
+<p>Blusas</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/W40800s7.jpg">
+<p>Casacos</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://cdn.awsli.com.br/600x450/619/619252/produto/29136395/51b66a1f786e499fa99e93232051f493-3qbgamzmf3.jpeg">
+<p>Saias</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://cdn.awsli.com.br/600x450/619/619252/produto/145340113/facc017f1d.jpg">
+<p>Collants</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://http2.mlstatic.com/D_NQ_NP_778037-MLB46754189116_072021-O-sapatilha-meia-ponta-evidence-ballet.webp">
+<p>Sapatilhas</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpgcnhy8ejW5wPEofFKjNL1nNLd7Npc7Q4A&s">
+<p>Acessórios</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://cdn.awsli.com.br/2500x2500/1421/1421519/produto/221069039/meia-cal-a-balle-lz8n2f2tax.jpg">
+<p>Meias calças</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA5jF0kw3VOkhq5AF-9K-bRJ3gSJN1s0TvUw&s">
+<p>Polainas</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://acdn-us.mitiendanube.com/stores/006/542/096/products/02882a8bb62369f73b270815c6e5a840-bca600b06de457dbe717595214124498-480-0.webp">
+<p>Tops</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeS7hJX-MQDtPiGEAfF2RkKULqz7awEmq1OQ&s">
+<p>Shorts</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://cdn.awsli.com.br/2500x2500/894/894676/produto/259866253/dsc_8659-wuizbwtkgl.jpg">
+<p>Calças</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnXgPejZrqCnQLd_RY6YOwxXQPQVQX_3dqlQ&s">
+<p>Vestidos</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://cdn.dooca.store/135207/products/whatsapp-image-2025-03-25-at-112556_640x640.jpeg?v=1742913671&webp=0">
+<p>Redes de cabelo</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://images.tcdn.com.br/img/img_prod/554415/faixa_ballet_infantil_intimitat_51008_1_1f8cfb167ea01098a47261383051a098_20220729131805.jpg">
+<p>Faixas e laços</p>
+</div>
+
+<div class="item-categoria">
+<img src="https://cdn.awsli.com.br/2500x2500/619/619252/produto/29138692/2a900d4c92.jpg">
+<p>Aquecimento</p>
+</div>
+
+</div>
+
+</nav>
+<!-- BANNER -->
+
+<section class="banner">
+
+<img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=80">
+
+<div class="texto-banner">
+<h2>MEGA PROMOÇÃO</h2>
+<h1>50% OFF</h1>
+<p>Nos principais produtos da FLOW</p>
+<button>COMPRAR AGORA</button>
+</div>
+
+</section>
+
+<!-- PROMOÇÃO DO MÊS -->
+
+<h2 class="titulo">PROMOÇÃO DO MÊS</h2>
+
+<section class="produtos">
+
+<div class="card">
+<img src="https://imperiodadanca.com.br/content/images/thumbs/0009242_outlet-983-collant-amni-renda-e-bojo-p-adulto-rosa-claro-evidence_600.jpeg">
+<h3>Collant Elegance</h3>
+<p>R$ 159,90</p>
+</div>
+
+<div class="card">
+<img src="https://imperiodadanca.com.br/content/images/thumbs/0004670_500-ponta-pirouette-evidence_600.jpeg">
+<h3>Sapatilha de Ponta</h3>
+<p>R$ 346,90</p>
+</div>
+
+<div class="card">
+<img src="https://acdn-us.mitiendanube.com/stores/001/342/307/products/13-426ccb3c08c87839ab17254631016070-480-0.webp">
+<h3>Saia Adulto</h3>
+<p>R$ 224,90</p>
+</div>
+
+<div class="card">
+<img src="https://lojasodanca.vtexassets.com/arquivos/ids/703377/SD2417_1626_F.jpg?v=639143586171600000">
+<h3>Top Flow Active</h3>
+<p>R$ 199,90</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.awsli.com.br/600x700/619/619252/produto/145340113/facc017f1d.jpg">
+<h3>Collant Clássico</h3>
+<p>R$ 179,90</p>
+</div>
+
+<div class="card">
+<img src="https://images.tcdn.com.br/img/img_prod/1342628/saia_transpassada_so_danca_ballet_gode_adulto_sd1243_1491_1_3d1e13fd1b5a557c01e17fb282bd6ab1.png">
+<h3>Saia Tule Premium</h3>
+<p>R$ 199,90</p>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA5jF0kw3VOkhq5AF-9K-bRJ3gSJN1s0TvUw&s">
+<h3>Polaina Ballet</h3>
+<p>R$ 79,90</p>
+</div>
+
+<div class="card">
+<img src="data:image/jpeg;base64,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">
+<h3>Meia-Calça</h3>
+<p>R$ 59,90</p>
+</div>
+
+</section>
+
+<!-- ITENS MAIS PROCURADOS -->
+
+<h2 class="titulo">ITENS MAIS PROCURADOS</h2>
+
+<section class="produtos">
+
+<div class="card">
+<img src="https://images.tcdn.com.br/img/img_prod/633103/jaqueta_feminina_puffer_inverno_bolha_nylon_3_cores_5395_1_60208a4bff4ca4430f3df9a27f0c470b.jpg">
+<h3>Jaqueta Ballet</h3>
+<p>R$ 229,90</p>
+</div>
+
+<div class="card">
+<img src="https://decathlonpro.vtexassets.com/arquivos/ids/159077130/velvet-dance-bag-pnk-no-size-rosa-velho-Unico1.jpg?v=638591747868300000">
+<h3>Bolsa Dance</h3>
+<p>R$ 179,90</p>
+</div>
+
+<div class="card">
+<img src="https://lojasodanca.vtexassets.com/arquivos/ids/703377/SD2417_1626_F.jpg?v=639143586171600000">
+<h3>Top Active</h3>
+<p>R$ 199,90</p>
+</div>
+
+<div class="card">
+<img src="https://imperiodadanca.com.br/content/images/thumbs/0004670_500-ponta-pirouette-evidence_600.jpeg">
+<h3>Sapatilha Profissional</h3>
+<p>R$ 346,90</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.awsli.com.br/600x700/619/619252/produto/145340113/facc017f1d.jpg">
+<h3>Collant Premium</h3>
+<p>R$ 149,90</p>
+</div>
+
+<div class="card">
+<img src="https://acdn-us.mitiendanube.com/stores/001/342/307/products/13-426ccb3c08c87839ab17254631016070-480-0.webp">
+<h3>Saia Clássica</h3>
+<p>R$ 119,90</p>
+</div>
+
+</section>
+
+<!-- BENEFÍCIOS -->
+
+<section class="beneficios">
+
+<div>
+<h3>🚚 Entrega Rápida</h3>
+<p>Para todo o Brasil.</p>
+</div>
+
+<div>
+<h3>💳 Parcelamento</h3>
+<p>Em até 12x sem juros.</p>
+</div>
+
+<div>
+<h3>🔒 Compra Segura</h3>
+<p>Proteção total dos seus dados.</p>
+</div>
+
+<div>
+<h3>🎀 Produtos Exclusivos</h3>
+<p>Qualidade para bailarinos.</p>
+</div>
+
+</section>
+<!-- SOBRE -->
+
+<section class="sobre">
+
+<h2 class="titulo">Sobre a FLOW</h2>
+
+<p>
+A FLOW é uma loja especializada em artigos para ballet e dança,
+oferecendo produtos de alta qualidade para bailarinos de todas as idades.
+Trabalhamos com collants, sapatilhas, saias, bolsas, acessórios e roupas
+para treino cuidadosamente selecionadas para proporcionar conforto,
+elegância e desempenho dentro e fora dos palcos.
+</p>
+
+</section>
+
+<!-- DEPOIMENTOS -->
+
+<section class="depoimentos">
+
+<h2 class="titulo">Depoimentos</h2>
+
+<div class="comentario">
+<p>"Produtos incríveis e atendimento excelente!"</p>
+<strong>Maria Silva</strong>
+</div>
+
+<div class="comentario">
+<p>"Minha filha adorou os produtos da FLOW."</p>
+<strong>Ana Souza</strong>
+</div>
+
+<div class="comentario">
+<p>"Entrega rápida e qualidade maravilhosa."</p>
+<strong>Juliana Martins</strong>
+</div>
+
+</section>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+<div class="rodape">
+
+<div>
+<h3>Ofertas e Novidades</h3>
+
+<input type="text" placeholder="Seu nome">
+
+<br><br>
+
+<input type="email" placeholder="Seu e-mail">
+
+<br>
+
+<button>OK</button>
+
+</div>
+
+<div>
+<h3>Fale Conosco</h3>
+<p>sac@flow.com.br</p>
+<p>WhatsApp: (41) 99999-9999</p>
+<p>Segunda à Sexta • 8h às 18h</p>
+</div>
+
+<div>
+<h3>Redes Sociais</h3>
+<p>Instagram</p>
+<p>Facebook</p>
+<p>TikTok</p>
+<p>YouTube</p>
+</div>
+
+</div>
+
+<hr style="margin:30px 0;border:1px solid #333;">
+
+<p style="text-align:center;">
+© 2026 FLOW - Todos os direitos reservados
+</p>
+
+</footer>
+
+</body>
+</html>
